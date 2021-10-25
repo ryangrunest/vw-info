@@ -1,21 +1,30 @@
 <script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-import HelloWorld from './components/HelloWorld.vue'
+import TheMainHeader from "./components/TheMainHeader.vue";
+import TheManualViewer from "./components/TheManualViewer.vue";
+</script>
+<script>
+export default {
+  name: "App",
+  data() {
+    return {
+      headerRightText: "Current Page: 1 of 94",
+    };
+  },
+  methods: {
+    currentPageUpdated(data) {
+      console.log("current page updated", data);
+      this.headerRightText = `Current Page: ${data} of 94`;
+    },
+  },
+};
 </script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + Vite" />
+  <div>
+    <TheMainHeader :header-right-text="headerRightText"></TheMainHeader>
+    <TheManualViewer @currentPageUpdated="currentPageUpdated"></TheManualViewer>
+  </div>
 </template>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
