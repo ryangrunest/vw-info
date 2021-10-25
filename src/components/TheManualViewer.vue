@@ -3,16 +3,22 @@
     <div
       class="
         w-screen
+        relative
         flex
-        justify-center
+        justify-between
         items-center
-        image-container
         mx-auto
         overflow-hidden
       "
+      id="image-container"
     >
       <img class="w-full h-auto" :src="currentImage" :alt="altImageText" />
     </div>
+    <manual-viewer-quick-links
+      :is-open="quickLinksIsOpen"
+      @toggleQuickLinks="toggleQuickLinks"
+      @quickLinkClicked="quickLinkClicked"
+    ></manual-viewer-quick-links>
     <div class="w-full divide-x divide-blue-100 h-10">
       <button
         :disabled="isPreviousButtonDisabled"
@@ -21,6 +27,7 @@
           p-5
           w-1/2
           text-center
+          uppercase
           transition
           bg-gray-500
           text-gray-200
@@ -37,6 +44,7 @@
           p-5
           w-1/2
           text-center
+          uppercase
           transition
           bg-gray-500
           text-gray-200
@@ -51,11 +59,14 @@
 </template>
 
 <script>
+import ManualViewerQuickLinks from "./ManualViewerQuickLinks.vue";
 export default {
   name: "TheManualViewer",
+  components: { ManualViewerQuickLinks },
   data() {
     return {
       currentPage: 1,
+      quickLinksIsOpen: false,
     };
   },
   computed: {
@@ -81,6 +92,13 @@ export default {
     nextImageButtonClicked() {
       this.currentPage += 1;
     },
+    toggleQuickLinks() {
+      this.quickLinksIsOpen = !this.quickLinksIsOpen;
+    },
+    quickLinkClicked(pageNumber) {
+      this.quickLinksIsOpen = false;
+      this.currentPage = pageNumber;
+    },
   },
   watch: {
     currentPage: function (val) {
@@ -91,8 +109,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.image-container {
-  height: calc(100vh - 9rem);
+#image-container {
+  height: calc(100vh - 13rem);
   max-width: 100rem;
 }
 </style>

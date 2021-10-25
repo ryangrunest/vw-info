@@ -12,7 +12,6 @@ export default {
   },
   methods: {
     currentPageUpdated(data) {
-      console.log("current page updated", data);
       this.headerRightText = `Current Page: ${data} of 94`;
     },
   },
