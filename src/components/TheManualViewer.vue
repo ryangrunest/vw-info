@@ -1,18 +1,10 @@
 <template>
-  <div>
+  <div id="manual-viewer">
     <div
-      class="
-        w-screen
-        relative
-        flex
-        justify-between
-        items-center
-        mx-auto
-        overflow-hidden
-      "
+      class="w-screen h-full relative flex justify-center align-middle mx-auto"
       id="image-container"
     >
-      <img class="w-full h-auto" :src="currentImage" :alt="altImageText" />
+      <img class="h-full w-auto" :src="currentImage" :alt="altImageText" />
     </div>
     <manual-viewer-quick-links
       :is-open="quickLinksIsOpen"
@@ -126,8 +118,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#image-container {
+#manual-viewer {
   height: calc(100vh - 13rem);
-  max-width: 100rem;
 }
 </style>
