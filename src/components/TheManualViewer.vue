@@ -1,14 +1,24 @@
 <template>
-  <div class="mt-6">
-    <div class="w-screen flex justify-center items-center image-container p-4">
+  <div>
+    <div
+      class="
+        w-screen
+        flex
+        justify-center
+        items-center
+        image-container
+        mx-auto
+        overflow-hidden
+      "
+    >
       <img class="w-full h-auto" :src="currentImage" :alt="altImageText" />
     </div>
-    <div class="w-full divide-x divide-blue-100">
+    <div class="w-full divide-x divide-blue-100 h-10">
       <button
         :disabled="isPreviousButtonDisabled"
         @click="previousImageButtonClicked"
         class="
-          p-3
+          p-5
           w-1/2
           text-center
           transition
@@ -24,7 +34,7 @@
         @click="nextImageButtonClicked"
         :disabled="isNextButtonDisabled"
         class="
-          p-3
+          p-5
           w-1/2
           text-center
           transition
@@ -82,6 +92,7 @@ export default {
 
 <style lang="scss" scoped>
 .image-container {
-  height: 60rem;
+  height: calc(100vh - 9rem);
+  max-width: 100rem;
 }
 </style>
