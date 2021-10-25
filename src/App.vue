@@ -8,6 +8,7 @@ export default {
   data() {
     return {
       headerRightText: "Current Page: 1 of 94",
+      headerLeftText: "",
     };
   },
   methods: {

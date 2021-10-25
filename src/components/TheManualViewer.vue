@@ -73,7 +73,7 @@ export default {
       return `1973 Volkswagen Manual - Page ${this.currentPage}`;
     },
     currentImage() {
-      return `/assets/vw_manual/page-${this.currentPage}.jpeg`;
+      return `/assets/vw_manuals/1973/page-${this.currentPage}.jpeg`;
     },
     isPreviousButtonDisabled() {
       return this.currentPage > 1 ? false : true;

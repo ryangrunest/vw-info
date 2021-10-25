@@ -3,7 +3,7 @@
     <div class="flex w-full justify-between align-middle h-full mx-auto px-4">
       <div class="flex justify-items-start align-middle">
         <h1 class="text-gray-200 font-sans text-lg md:text-2xl my-auto">
-          1973 Volkswagen Bus Manual
+          1973 Volkswagen Bus Owners Manual
         </h1>
       </div>
       <div class="flex justify-items-end align-middle">
