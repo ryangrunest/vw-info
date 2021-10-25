@@ -4,7 +4,12 @@
       class="w-screen h-full relative flex justify-center align-middle mx-auto"
       id="image-container"
     >
-      <img class="h-full w-auto" :src="currentImage" :alt="altImageText" />
+      <img
+        class="w-full max-w-min"
+        id="viewer-image"
+        :src="currentImage"
+        :alt="altImageText"
+      />
     </div>
     <manual-viewer-quick-links
       :is-open="quickLinksIsOpen"
@@ -120,5 +125,13 @@ export default {
 <style lang="scss" scoped>
 #manual-viewer {
   height: calc(100vh - 13rem);
+}
+#image-container {
+  align-items: center;
+}
+#viewer-image {
+  height: fit-content;
+  max-height: 100%;
+  max-width: fit-content;
 }
 </style>
