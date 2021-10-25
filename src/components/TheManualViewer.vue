@@ -23,6 +23,7 @@
       <button
         :disabled="isPreviousButtonDisabled"
         @click="previousImageButtonClicked"
+        @keyup.left="previousImageButtonClicked"
         class="
           p-5
           w-1/2
@@ -39,6 +40,7 @@
       </button>
       <button
         @click="nextImageButtonClicked"
+        @keyup.right="nextImageButtonClicked"
         :disabled="isNextButtonDisabled"
         class="
           p-5
@@ -83,14 +85,29 @@ export default {
       return this.currentPage < 94 ? false : true;
     },
   },
+  mounted: function () {
+    document.addEventListener("keyup", this.onKeyPress);
+  },
+  unmounted: function () {
+    document.removeEventListener("keyup", this.onKeyPress);
+  },
   methods: {
     previousImageButtonClicked() {
-      if (this.currentPage > 1) {
+      if (!this.isPreviousButtonDisabled) {
         this.currentPage -= 1;
       }
     },
     nextImageButtonClicked() {
-      this.currentPage += 1;
+      if (!this.isNextButtonDisabled) {
+        this.currentPage += 1;
+      }
+    },
+    onKeyPress(e) {
+      if (e.key === "ArrowRight") {
+        this.nextImageButtonClicked();
+      } else if (e.key === "ArrowLeft") {
+        this.previousImageButtonClicked();
+      }
     },
     toggleQuickLinks() {
       this.quickLinksIsOpen = !this.quickLinksIsOpen;
