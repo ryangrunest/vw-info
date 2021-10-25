@@ -28,7 +28,7 @@
           disabled:opacity-50 disabled:cursor-not-allowed
         "
       >
-        Previous Image
+        Previous Page
       </button>
       <button
         @click="nextImageButtonClicked"
@@ -44,7 +44,7 @@
           disabled:opacity-50 disabled:cursor-not-allowed
         "
       >
-        Next Image
+        Next Page
       </button>
     </div>
   </div>
