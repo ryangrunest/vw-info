@@ -1,33 +1,47 @@
 <template>
   <div>
-    <TheMainHeader :header-right-text="headerRightText"></TheMainHeader>
-    <TheManualViewer @currentPageUpdated="currentPageUpdated"></TheManualViewer>
+    <transition name="fade">
+      <TheMainNav
+        @nav-button-clicked="toggleNav"
+        v-if="mainNavIsOpen"
+      ></TheMainNav>
+    </transition>
+    <TheMainHeader
+      @nav-button-clicked="toggleNav"
+      header-left-text="Volkswagen Owners Manuals"
+    ></TheMainHeader>
   </div>
 </template>
 
 <script>
 import TheMainHeader from "../components/TheMainHeader.vue";
-import TheManualViewer from "../components/TheManualViewer.vue";
+import TheMainNav from "../components/TheMainNav.vue";
 
 export default {
-  name: "App",
-  components: {
-    TheMainHeader,
-    TheManualViewer,
-  },
+  name: "Home",
+  components: { TheMainHeader, TheMainNav },
   data() {
     return {
-      headerRightText: "Current Page: 1 of 94",
-      headerLeftText: "",
+      mainNavIsOpen: false,
     };
   },
   methods: {
-    currentPageUpdated(data) {
-      this.headerRightText = `Current Page: ${data} of 94`;
+    toggleNav() {
+      console.log("toggle nav");
+      this.mainNavIsOpen = !this.mainNavIsOpen;
     },
   },
 };
 </script>
 
 <style>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
 </style>
