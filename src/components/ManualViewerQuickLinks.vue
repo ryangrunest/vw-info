@@ -65,22 +65,20 @@ export default {
   name: "ManualViewerQuickLinks",
   props: {
     quickLinks: {
-      type: Object,
+      type: Array,
       required: false,
       default: () => {
         return [];
       },
     },
-  },
-  data() {
-    return {};
-  },
-  props: {
     isOpen: {
       type: Boolean,
       default: false,
       required: true,
     },
+  },
+  data() {
+    return {};
   },
 };
 </script>

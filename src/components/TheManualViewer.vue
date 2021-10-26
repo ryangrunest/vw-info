@@ -13,6 +13,7 @@
     </div>
     <manual-viewer-quick-links
       :is-open="quickLinksIsOpen"
+      :quick-links="quickLinks"
       @toggleQuickLinks="toggleQuickLinks"
       @quickLinkClicked="quickLinkClicked"
     ></manual-viewer-quick-links>
@@ -89,6 +90,9 @@ export default {
     },
     isNextButtonDisabled() {
       return this.currentPage < this.manualData.numberOfPages ? false : true;
+    },
+    quickLinks() {
+      return this.manualData.quickLinks || [];
     },
   },
   mounted: function () {
