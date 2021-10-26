@@ -144,6 +144,7 @@ export default {
 }
 #viewer-image {
   height: fit-content;
+  width: auto;
   max-height: 100%;
   max-width: fit-content;
 }
