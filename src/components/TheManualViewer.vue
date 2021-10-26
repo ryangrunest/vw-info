@@ -5,7 +5,7 @@
       id="image-container"
     >
       <img
-        class="w-full max-w-min"
+        class="w-full xl:w-auto"
         id="viewer-image"
         :src="currentImage"
         :alt="altImageText"
@@ -144,7 +144,6 @@ export default {
 }
 #viewer-image {
   height: fit-content;
-  width: auto;
   max-height: 100%;
   max-width: fit-content;
 }
