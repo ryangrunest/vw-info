@@ -62,6 +62,15 @@ import ManualViewerQuickLinks from "./ManualViewerQuickLinks.vue";
 export default {
   name: "TheManualViewer",
   components: { ManualViewerQuickLinks },
+  props: {
+    manualData: {
+      type: Object,
+      required: true,
+      default: () => {
+        return {};
+      },
+    },
+  },
   data() {
     return {
       currentPage: 1,
@@ -70,16 +79,16 @@ export default {
   },
   computed: {
     altImageText() {
-      return `1973 Volkswagen Manual - Page ${this.currentPage}`;
+      return `${this.manualData.altImageText} - Page ${this.currentPage}`;
     },
     currentImage() {
-      return `/assets/vw_manuals/1973/page-${this.currentPage}.jpeg`;
+      return `/assets/${this.manualData.folder}/page-${this.currentPage}.jpeg`;
     },
     isPreviousButtonDisabled() {
       return this.currentPage > 1 ? false : true;
     },
     isNextButtonDisabled() {
-      return this.currentPage < 94 ? false : true;
+      return this.currentPage < this.manualData.numberOfPages ? false : true;
     },
   },
   mounted: function () {

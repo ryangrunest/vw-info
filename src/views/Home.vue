@@ -10,6 +10,15 @@
       @nav-button-clicked="toggleNav"
       header-left-text="Volkswagen Owners Manuals"
     ></TheMainHeader>
+    <div class="container mx-auto mt-10 bg-gray-100 p-4 rounded-sm shadow-md">
+      <div class="text-xl">Owners Manuals</div>
+      <router-link
+        :to="{
+          path: '/owners-manual-viewer/seventy-three-bay-window',
+        }"
+        >Bay Window - 1973</router-link
+      >
+    </div>
   </div>
 </template>
 
@@ -27,7 +36,6 @@ export default {
   },
   methods: {
     toggleNav() {
-      console.log("toggle nav");
       this.mainNavIsOpen = !this.mainNavIsOpen;
     },
   },

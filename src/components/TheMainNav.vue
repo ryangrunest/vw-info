@@ -1,5 +1,5 @@
 <template>
-  <div class="absolute top-0 left-0 right-0 bottom-0 bg-gray-600">
+  <div class="absolute top-0 left-0 right-0 bottom-0 bg-gray-600 z-50">
     <div class="flex w-full justify-end align-middle my-auto h-10">
       <button
         class="text-gray-200 text-md md:text-xl my-7 mx-4"
@@ -20,6 +20,23 @@
           />
         </svg>
       </button>
+    </div>
+    <div
+      class="
+        flex
+        w-full
+        justify-center
+        items-center
+        flex-col
+        text-gray-200 text-xl
+      "
+    >
+      <router-link class="my-1" to="/" @click="$emit('nav-button-clicked')">
+        Home
+      </router-link>
+      <router-link class="my-1" to="/about" @click="$emit('nav-button-clicked')"
+        >About</router-link
+      >
     </div>
   </div>
 </template>

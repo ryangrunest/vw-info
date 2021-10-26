@@ -1,11 +1,13 @@
-import { createRouter, createWebHashHistory } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import About from "../views/About.vue";
+import OwnersManualViewer from "../views/OwnersManualViewer.vue"
 
 const routes = [
   {
     path: "/",
     name: "Home",
+    alias: '/',
     component: Home,
   },
   {
@@ -17,10 +19,15 @@ const routes = [
     //component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
     component: About,
   },
+  {
+    path: "/owners-manual-viewer/:id",
+    name: 'OwnersManualViewer',
+    component: OwnersManualViewer
+  }
 ];
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes,
 });
 
