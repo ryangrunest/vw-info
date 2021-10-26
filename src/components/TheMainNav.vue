@@ -34,9 +34,9 @@
       <router-link class="my-1" to="/" @click="$emit('nav-button-clicked')">
         Home
       </router-link>
-      <router-link class="my-1" to="/about" @click="$emit('nav-button-clicked')"
+      <!-- <router-link class="my-1" to="/about" @click="$emit('nav-button-clicked')"
         >About</router-link
-      >
+      > -->
     </div>
   </div>
 </template>
