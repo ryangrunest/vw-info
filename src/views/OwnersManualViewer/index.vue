@@ -19,10 +19,10 @@
 </template>
 
 <script>
-import TheMainHeader from "../components/TheMainHeader.vue";
-import TheMainNav from "../components/TheMainNav.vue";
-import TheManualViewer from "../components/TheManualViewer.vue";
-import ownersManualViewerData from "../data/index";
+import TheMainHeader from "../../components/TheMainHeader.vue";
+import TheMainNav from "../../components/TheMainNav.vue";
+import TheManualViewer from "./components/TheManualViewer.vue";
+import ownersManualViewerData from "./data/index";
 
 export default {
   name: "OwnersManualViewer",

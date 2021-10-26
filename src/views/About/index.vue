@@ -14,8 +14,8 @@
 </template>
 
 <script>
-import TheMainNav from "../components/TheMainNav.vue";
-import TheMainHeader from "../components/TheMainHeader.vue";
+import TheMainNav from "../../components/TheMainNav.vue";
+import TheMainHeader from "../../components/TheMainHeader.vue";
 
 export default {
   name: "About",
