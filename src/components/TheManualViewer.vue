@@ -5,7 +5,7 @@
       id="image-container"
     >
       <img
-        class="w-full xl:w-auto"
+        class="w-full 2xl:w-auto"
         id="viewer-image"
         :src="currentImage"
         :alt="altImageText"
